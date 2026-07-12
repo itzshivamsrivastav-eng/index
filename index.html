@@ -4,170 +4,160 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Search</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
 
         
-.wr{
-    text-align: center;
-    color: red;
-    border: 3px inset green;
-    padding: 10px 20px;
-    border-radius: 10px;
-    margin: 15px 0;
-}
 
-.para{
-    font-size: 20px;
-    padding: 5px 10px;
-    border: 3px inset yellow;
-    border-radius: 10px;
-    color: blue;
-    font-family: Arial, sans-serif;
-}
+        .wr{
+            text-align: center;
+            color: #dc2626;
+            border-bottom: 2px inset green;
+            border-top: 2px inset green;
+            padding: 2px 5px;
+            border-radius: 10px;
+            margin-left: 190px;
+            margin-right: 190px;
+            font-family: 'Poppins', cursive;
+        }
+        .ingre-heading{
+            display: inline-block;
+            color: black;
+            border-bottom: 3px inset rgb(171,92,92);
+            border-radius: 10px;
+            padding: 5px 10px;
+        }
 
-body{
-    background-image: url('searchbarpage.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    min-height: 100vh;
-}
+        .ingre-list{
+            font-size: 20px;
+            color: lch(21.69% 60.6 311.15);
+            font-family: 'Poppins', sans-serif;
+        }
 
-h1{
-    font-size: 28px;
-    border: 3px inset green;
-    border-radius: 20px;
-    padding: 10px 20px;
-    width: fit-content;
-    max-width: 90%;
-    text-align: center;
-    color: red;
-    margin: 250px auto 0;
-}
+        .para{
+            font-size: 20px;
+            padding: 5px 10px;
+            border: 3px inset rgb(171, 92, 92);
+            border-radius: 10px;
+            color: #0f766e;
+            font-family: 'Poppins', sans-serif;
+        }
+        body{
+            background-image: url('searchbarpage.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        h1{
+            font-size: 48px;
+            border: 3px inset green;
+            border-radius: 20px;
+            padding: 30px 40px;
+            margin-left: 380px;
+            margin-right: 380px;
+            text-align: center;
+            color: red;
+            margin-top: 230px;
+            background-color: rgb(247, 243, 243);
+        }
+        
+        .search{
+            display: block;
+            width:760px;
+            margin: 20px auto;
+            font-size: 24px;
+            padding: 30px 40px;
+            border-radius: 50px;
+            border: 3px inset green;
+            box-sizing: border-box;
+        }
 
-.search{
-    display: block;
-    margin: 40px auto;
-    padding: 10px;
-    width: 90%;
-    max-width: 320px;
-    border-radius: 10px;
-    border: 1px inset green;
-}
+        .search::placeholder{
+            font-size: 24px;
+        }
+        .img{
+            border: 20px solid transparent;
+            border-image: url('border.png') 30 stretch;
+            background-color: rgba(255, 255, 255, 0.5);
+            width:250px;
+            display:block;
+            margin : 20px auto;
+            border-radius:15px;
+        }
+        .btn{
+        
+            display: block;
+            margin: 20px auto;
+            background-color: rgba(255,255,255,0.5);
+            border-radius: 20px;
+            padding: 20px 30px;
+            color: brown;
+            font-size: 20px;
+        }
 
-.btn{
-    display: block;
-    background-color: rgba(255,255,255,0.5);
-    border-radius: 20px;
-    padding: 8px 20px;
-    color: brown;
-    font-size: 20px;
-    margin: 20px auto;
-}
+        .ytbtn{
+            
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 20px;
+            padding: 10px 30px;
+            display: block;
+            margin: 40px auto;
+            text-align: center;
+            color: red;
+            font-size: 20px;
 
-.overlay{
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background: rgba(0,0,0,0.5);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
+        }
+        .overlay{
+            position: fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background: rgba(0,0,0,0.5);
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            }
 
-.recipe-card{
-    width: 90%;
-    max-width: 700px;
-    max-height: 80vh;
-    background-image: url('background.png');
-    background-size: cover;
-    background-position: center;
-    padding: 20px;
-    border-radius: 20px;
-    overflow-y: auto;
-}
+        .recipe-card{
+        
+            width:700px;
+            height:500px;
+            background-image: url('background.png');
+            padding:20px;
+            border-radius:20px;
+            overflow-y:auto;
+        }
 
-.hidden{
-    display:none;
-}
+        .hidden{
+            display:none;
+        }
 
-.error{
-    color:red;
-}
+        .error{
+            color:red;
+        }
 
-footer{
-    font-size: 20px;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(0,0,0,0.7);
-    color: white;
-}
+        footer {
+            font-size: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            padding: 35px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+        }
+        .spinner{
+            width:28px;
+            height:28px;
+            border:3px solid rgba(255,255,255,0.25);
+            border-top-color:orange;
+            border-radius:50%;
+            animation:spin 0.8s linear infinite;
+            margin: auto;
+        }
+        @keyframes spin{ to{ transform:rotate(360deg); } }
 
-.spinner{
-    width:28px;
-    height:28px;
-    border:3px solid #ddd;
-    border-top-color:orange;
-    border-radius:50%;
-    animation:spin 0.8s linear infinite;
-    margin:auto;
-}
-
-@keyframes spin{
-    to{
-        transform:rotate(360deg);
-    }
-}
-
-@media (max-width: 768px){
-
-    h1{
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-top: 180px;
-        font-size: 22px;
-    }
-
-    .search{
-        width: 90%;
-        max-width: 320px;
-    }
-
-    .btn{
-        display: block;
-        margin: 20px auto;
-        font-size: 18px;
-    }
-
-    .recipe-card{
-        width: 95%;
-        height: auto;
-        max-height: 80vh;
-        overflow-y: auto;
-        padding: 15px;
-    }
-
-    .wr{
-        margin-left: 10px;
-        margin-right: 10px;
-        font-size: 18px;
-    }
-
-    .para{
-        font-size: 16px;
-    }
-
-    footer{
-        font-size: 14px;
-        padding: 15px;
-    }
-}
     </style>
 </head>
 <body>
@@ -193,15 +183,29 @@ footer{
         });
 
         function showRecipe(recipe) {
+
+            let ingredients = "";
+
+            for(let i = 1; i <= 20; i++){
+                if(recipe[`strIngredient${i}`]){
+                    ingredients += `<li>${recipe[`strIngredient${i}`]}</li>`;
+                }
+            }
+            
             recipeContent.innerHTML = `
-                <h2 class= "wr">Dish Name : ${recipe.strMeal}</h2>
-                <img src="${recipe.strMealThumb}" style="width:250px;display:block;margin:20px auto;border-radius:15px;">
+                
+                <h2 class= "wr" style="margin-left: 130px; margin-right: 130px;">Dish Name : ${recipe.strMeal}</h2>
+                <img src="${recipe.strMealThumb}" class ="img">
                 <h2 class = "wr">Category : ${recipe.strCategory}</h2>
-                <h2 class = "wr">Area : ${recipe.strArea}</h2>
+                <h2 class = "wr">Country : ${recipe.strArea}</h2>
+                <a href="${recipe.strYoutube}" target="_blank">
+                    <button class="ytbtn">Watch Recipe Video 🎥</button></a>
+                <h2 class = "ingre-heading">
+                Ingredients : </h2><ul class="ingre-list">${ingredients}</ul>
                 <p class="para">Instructions : ${recipe.strInstructions}</p>
             `;
             
-            overlay.classList.remove("hidden");
+            // overlay.classList.remove("hidden");
         }
 
         function loadingSpinner() {
@@ -247,6 +251,7 @@ footer{
                 searchButton.disabled = false;
             }
         }
+
         searchButton.addEventListener("click", (e) => {
             e.preventDefault();
             const recipeName = searchInput.value.trim();
@@ -256,7 +261,13 @@ footer{
             }
             handleSearch(recipeName);
         });
-        
+
+        searchInput.addEventListener("keydown", function(e){
+            if(e.key === "Enter"){
+                searchButton.click();
+            }
+        });
+                
 
 
     </script>
